@@ -1,5 +1,5 @@
 {% set name = "dadi" %}
-{% set version = "2.0.6" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 41727bf965005f3345493eb53d424631a315768a3ba054530a7e13259c6e2a9c
+  sha256: 97a15aa7ef501850cad4cff66b11b66ecb65d5d68acbf2ff713585c81c3a1038
 
 build:
-  number: 2
+  number: 0
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --install-option="--cython" '
 
 requirements:
@@ -35,12 +35,12 @@ test:
     - dadi.TwoLocus
 
 about:
-  home: "https://bitbucket.org/gutenkunstlab/dadi"
-  license: "BSD-3-Clause"
-  license_family: "BSD"
-  license_file: "LICENSE.txt"
-  summary: "Fit population genetic models using diffusion approximations to the allele frequency spectrum"
-  doc_url: "https://dadi.readthedocs.io/"
+  home: https://bitbucket.org/gutenkunstlab/dadi
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: Fit population genetic models using diffusion approximations to the allele frequency spectrum
+  doc_url: https://dadi.readthedocs.io/
 
 extra:
   recipe-maintainers:

@@ -1,5 +1,5 @@
 {% set name = "dadi" %}
-{% set version = "2.0.6" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 41727bf965005f3345493eb53d424631a315768a3ba054530a7e13259c6e2a9c
+  sha256: 97a15aa7ef501850cad4cff66b11b66ecb65d5d68acbf2ff713585c81c3a1038
 
 build:
   number: 0
@@ -25,7 +25,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
-    - matplotlib
+    - matplotlib-base
 
 test:
   imports:

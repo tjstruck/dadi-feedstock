@@ -10,7 +10,7 @@ source:
   sha256: d1d69568610ddf2f4283917825042c1ceafd4f23bcd06c628eef170bdb5271a2 
 
 build:
-  number: 2
+  number: 0
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --install-option="--cython" '
 
 requirements:
@@ -36,12 +36,12 @@ test:
     - dadi.TwoLocus
 
 about:
-  home: "https://bitbucket.org/gutenkunstlab/dadi"
-  license: "BSD-3-Clause"
-  license_family: "BSD"
-  license_file: "LICENSE.txt"
-  summary: "Fit population genetic models using diffusion approximations to the allele frequency spectrum"
-  doc_url: "https://dadi.readthedocs.io/"
+  home: https://bitbucket.org/gutenkunstlab/dadi
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: Fit population genetic models using diffusion approximations to the allele frequency spectrum
+  doc_url: https://dadi.readthedocs.io/
 
 extra:
   recipe-maintainers:

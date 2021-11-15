@@ -10,7 +10,7 @@ source:
   sha256: d1d69568610ddf2f4283917825042c1ceafd4f23bcd06c628eef170bdb5271a2 
 
 build:
-  number: 3
+  number: 4
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --install-option="--cython" '
 
 requirements:

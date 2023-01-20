@@ -10,12 +10,16 @@ source:
   sha256: 8c1ce82e50d5f2fc66f06853f67a8f05a36bb3ba54ce12586419c870776e5ff4
 
 build:
-  number: 0
+  number: 1
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --install-option="--cython" '
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
   host:
     - pip
     - cython

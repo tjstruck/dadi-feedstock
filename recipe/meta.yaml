@@ -1,5 +1,5 @@
 {% set name = "dadi" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8c1ce82e50d5f2fc66f06853f67a8f05a36bb3ba54ce12586419c870776e5ff4
+  sha256: d886736dc7a78ab2e3df8d9e07b13366e54e4be3de716b6a38abe5359e798060
 
 build:
-  number: 2
+  number: 0
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --install-option="--cython" '
 
 requirements:

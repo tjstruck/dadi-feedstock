@@ -1,5 +1,5 @@
 {% set name = "dadi" %}
-{% set version = "2.3.2" %}
+{% set version = "2.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: def568a6c0f026d87f8358903b3b398e6a265614326dad58cc7fe060b3ab8967
+  sha256: 1aa2d0fa6399a612d84bc8645dd7e5676db59da9c3427459188879f9071c5f77
 
 build:
-  number: 0
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --install-option="--cython" '
+  number: 1
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
@@ -28,7 +29,6 @@ requirements:
     - nlopt
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scipy
     - matplotlib-base
     - nlopt

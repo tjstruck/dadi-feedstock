@@ -20,12 +20,12 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy <2                               # [build_platform != target_platform]
   host:
     - pip
     - cython
     - python
-    - numpy
+    - numpy <2
     - nlopt
   run:
     - python
